@@ -1,40 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Memoria Musical · Musicala</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Memoria Musical · Musicala</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <main class="app-shell">
+    <section class="game-card" aria-label="Minijuego de memoria musical auditiva">
+      <header class="hero">
+        <div class="brand-badge" aria-label="Musicala">
+          <img src="logo.png" alt="Logo Musicala" class="brand-logo" />
+        </div>
 
-<div class="game">
+        <p class="eyebrow">Entrenamiento auditivo</p>
+        <h1>Memoria Musical</h1>
+        <p class="intro">Escucha la secuencia, repítela en orden y reta tu oído. Suena simple, porque así empiezan todas las tragedias humanas.</p>
+      </header>
 
-<h1>🎵 Memoria Musical</h1>
-<p>Escucha la secuencia y repítela</p>
+      <section class="status-grid" aria-label="Estado del juego">
+        <article class="status-card">
+          <span class="status-label">Nivel</span>
+          <strong id="level">0</strong>
+        </article>
 
-<div class="controls">
-<button id="startBtn">Iniciar juego</button>
-</div>
+        <article class="status-card">
+          <span class="status-label">Mejor marca</span>
+          <strong id="bestScore">0</strong>
+        </article>
+      </section>
 
-<div class="pads">
+      <div class="message-box" id="message" role="status" aria-live="polite">
+        Presiona iniciar para escuchar la primera secuencia.
+      </div>
 
-<div class="pad pad1" data-note="C">Do</div>
-<div class="pad pad2" data-note="D">Re</div>
-<div class="pad pad3" data-note="E">Mi</div>
-<div class="pad pad4" data-note="G">Sol</div>
+      <section class="pads" aria-label="Botones de notas musicales">
+        <button class="pad pad-do" type="button" data-note="C" aria-label="Nota Do">
+          <span class="pad-note">Do</span>
+          <span class="pad-key">C</span>
+        </button>
 
-</div>
+        <button class="pad pad-re" type="button" data-note="D" aria-label="Nota Re">
+          <span class="pad-note">Re</span>
+          <span class="pad-key">D</span>
+        </button>
 
-<div class="info">
-<p>Nivel: <span id="level">0</span></p>
-<p id="message">Presiona iniciar</p>
-</div>
+        <button class="pad pad-mi" type="button" data-note="E" aria-label="Nota Mi">
+          <span class="pad-note">Mi</span>
+          <span class="pad-key">E</span>
+        </button>
 
-</div>
+        <button class="pad pad-sol" type="button" data-note="G" aria-label="Nota Sol">
+          <span class="pad-note">Sol</span>
+          <span class="pad-key">G</span>
+        </button>
+      </section>
 
-<script src="app.js"></script>
+      <footer class="controls">
+        <button id="startBtn" class="primary-btn" type="button">Iniciar juego</button>
+        <button id="repeatBtn" class="secondary-btn" type="button" disabled>Repetir secuencia</button>
+      </footer>
+    </section>
+  </main>
 
+  <script src="app.js"></script>
 </body>
 </html>
